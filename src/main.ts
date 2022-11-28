@@ -1,5 +1,4 @@
-/// <reference types="@workadventure/iframe-api-typings" />
-
+// <reference types="@workadventure/iframe-api-typings" />
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
@@ -12,8 +11,8 @@ WA.onInit().then(() => {
     console.log('Player tags: ',WA.player.tags)
 
     WA.room.onEnterLayer('clockZone').subscribe(() => {
-        const today = new Date();
-        const time = today.getHours() + ":" + today.getMinutes();
+        const today: Date = new Date();
+        const time: String = today.getHours() + ":" + today.getMinutes();
         currentPopup = WA.ui.openPopup("clockPopup","It's " + time,[]);
     })
 
@@ -33,4 +32,4 @@ function closePopup(){
     }
 }
 
-export {};
+export {closePopup};
